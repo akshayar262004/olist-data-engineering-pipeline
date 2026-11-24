@@ -1,0 +1,47 @@
+
+column_mapping:
+
+  olist_orders_dataset:
+    order_purchase_timestamp: purchase_timestamp
+    order_approved_at: approved_timestamp
+    order_delivered_carrier_date: carrier_delivery_timestamp
+    order_delivered_customer_date: customer_delivery_timestamp
+    order_estimated_delivery_date: estimated_delivery_timestamp
+
+  olist_customers_dataset:
+    customer_zip_code_prefix: zip_code_prefix
+    customer_city: city
+    customer_state: state
+    customer_type: customer_segment
+
+  olist_products_dataset:
+    product_category_name: category_name
+    product_name_lenght: product_name_length
+    product_description_lenght: product_description_length
+
+
+
+validation:
+
+  olist_orders_dataset:
+    required_columns:
+      - order_id
+      - customer_id
+      - order_status
+      - purchase_timestamp
+    unique_columns:
+      - order_id
+
+  olist_customers_dataset:
+    required_columns:
+      - customer_id
+      - customer_unique_id
+    unique_columns:
+      - customer_id
+
+  olist_products_dataset:
+    required_columns:
+      - product_id
+    unique_columns:
+      - product_id
+
